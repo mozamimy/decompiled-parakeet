@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{D8C2DFC4-DD60-4E9C-900D-A1245E5E96D1}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>parakeet</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="AxInterop.WMPLib" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Interop.WMPLib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="parakeet.Properties\Resources.cs" />
+    <Compile Include="parakeet.Properties\Settings.cs" />
+    <Compile Include="parakeet\AddRssForm.cs" />
+    <Compile Include="parakeet\DownloadForm.cs" />
+    <Compile Include="parakeet\MainForm.cs" />
+    <Compile Include="parakeet\ParakeetEnvironment.cs" />
+    <Compile Include="parakeet\Program.cs" />
+    <Compile Include="parakeet\RSSElement.cs" />
+    <Compile Include="parakeet\RSSItem.cs" />
+    <Compile Include="parakeet\VersionDialog.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="parakeet.Properties\Resources.resources" />
+    <EmbeddedResource Include="parakeet\AddRssForm.resources" />
+    <EmbeddedResource Include="parakeet\DownloadForm.resources" />
+    <EmbeddedResource Include="parakeet\MainForm.resources" />
+    <EmbeddedResource Include="parakeet\VersionDialog.resources" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
